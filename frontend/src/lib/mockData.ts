@@ -103,17 +103,17 @@ const mockProductivityMetrics: Record<number, ProductivityMetrics> = {
   }
 }
 
-// Mock contributors
+// Mock contributors — all names, repos, and data are fictional / synthetic
 export const mockContributors: Contributor[] = [
   {
     id: 1,
-    username: 'sarah-chen',
-    url: 'https://github.com/sarah-chen',
-    name: 'Sarah Chen',
-    email: 'sarah.chen@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/1',
-    summary: 'Machine Learning Infrastructure expert with deep expertise in PyTorch and model optimization',
-    expertise_summary: 'Machine Learning Infrastructure | PyTorch | Model Optimization',
+    username: 'alex-rivera',
+    url: '',
+    name: 'Alex Rivera',
+    email: 'alex.r@sample-org.dev',
+    avatar_url: '',
+    summary: 'ML/AI infrastructure engineer with deep expertise in model training pipelines and optimization',
+    expertise_summary: 'ML Infrastructure | Training Pipelines | Model Optimization',
     created_at: '2024-01-15T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -121,7 +121,7 @@ export const mockContributors: Contributor[] = [
         id: 1,
         contributor: 1,
         repository: 1,
-        repository_name: 'pytorch/torchtune',
+        repository_name: 'sample-org/ml-pipeline',
         total_commits: 142,
         total_issues: 23,
         total_prs: 45,
@@ -134,13 +134,13 @@ export const mockContributors: Contributor[] = [
   },
   {
     id: 2,
-    username: 'marcus-johnson',
-    url: 'https://github.com/marcus-johnson',
-    name: 'Marcus Johnson',
-    email: 'marcus.j@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/2',
-    summary: 'Distributed systems architect specializing in backend architecture and API design',
-    expertise_summary: 'Distributed Systems | Backend Architecture | API Design',
+    username: 'jordan-hayes',
+    url: '',
+    name: 'Jordan Hayes',
+    email: 'jordan.h@sample-org.dev',
+    avatar_url: '',
+    summary: 'Backend architect specializing in distributed systems and API gateway design',
+    expertise_summary: 'Distributed Systems | API Gateway | Backend Architecture',
     created_at: '2024-02-20T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -148,7 +148,7 @@ export const mockContributors: Contributor[] = [
         id: 2,
         contributor: 2,
         repository: 2,
-        repository_name: 'kubernetes/kubernetes',
+        repository_name: 'sample-org/api-gateway',
         total_commits: 89,
         total_issues: 34,
         total_prs: 28,
@@ -161,13 +161,13 @@ export const mockContributors: Contributor[] = [
   },
   {
     id: 3,
-    username: 'elena-rodriguez',
-    url: 'https://github.com/elena-rodriguez',
-    name: 'Elena Rodriguez',
-    email: 'elena.r@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/3',
-    summary: 'Frontend architect with deep React, TypeScript, and performance optimization expertise',
-    expertise_summary: 'Frontend Architecture | React | TypeScript | Performance',
+    username: 'morgan-chen',
+    url: '',
+    name: 'Morgan Chen',
+    email: 'morgan.c@sample-org.dev',
+    avatar_url: '',
+    summary: 'Frontend lead with deep React, TypeScript, and design system expertise',
+    expertise_summary: 'Frontend Architecture | React | TypeScript | Design Systems',
     created_at: '2024-03-10T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -175,7 +175,7 @@ export const mockContributors: Contributor[] = [
         id: 3,
         contributor: 3,
         repository: 3,
-        repository_name: 'facebook/react',
+        repository_name: 'sample-org/component-lib',
         total_commits: 203,
         total_issues: 12,
         total_prs: 67,
@@ -188,13 +188,13 @@ export const mockContributors: Contributor[] = [
   },
   {
     id: 4,
-    username: 'david-kim',
-    url: 'https://github.com/david-kim',
-    name: 'David Kim',
-    email: 'david.kim@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/4',
-    summary: 'DevOps engineer with expertise in CI/CD, Infrastructure as Code, and cloud architecture',
-    expertise_summary: 'DevOps | CI/CD | Infrastructure as Code | Cloud Architecture',
+    username: 'casey-mitchell',
+    url: '',
+    name: 'Casey Mitchell',
+    email: 'casey.m@sample-org.dev',
+    avatar_url: '',
+    summary: 'DevOps engineer with expertise in CI/CD, infrastructure as code, and cloud architecture',
+    expertise_summary: 'DevOps | CI/CD | Infrastructure as Code | Cloud',
     created_at: '2024-01-25T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -202,7 +202,7 @@ export const mockContributors: Contributor[] = [
         id: 4,
         contributor: 4,
         repository: 4,
-        repository_name: 'hashicorp/terraform',
+        repository_name: 'sample-org/deploy-engine',
         total_commits: 156,
         total_issues: 45,
         total_prs: 52,
@@ -215,13 +215,13 @@ export const mockContributors: Contributor[] = [
   },
   {
     id: 5,
-    username: 'priya-patel',
-    url: 'https://github.com/priya-patel',
-    name: 'Priya Patel',
-    email: 'priya.patel@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/5',
-    summary: 'Data engineering specialist with expertise in Apache Spark, ETL pipelines, and Python',
-    expertise_summary: 'Data Engineering | Apache Spark | ETL Pipelines | Python',
+    username: 'taylor-singh',
+    url: '',
+    name: 'Taylor Singh',
+    email: 'taylor.s@sample-org.dev',
+    avatar_url: '',
+    summary: 'Data engineering specialist with expertise in streaming ETL pipelines and data warehousing',
+    expertise_summary: 'Data Engineering | ETL Pipelines | Streaming | Python',
     created_at: '2024-04-05T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -229,7 +229,7 @@ export const mockContributors: Contributor[] = [
         id: 5,
         contributor: 5,
         repository: 5,
-        repository_name: 'apache/spark',
+        repository_name: 'sample-org/etl-service',
         total_commits: 178,
         total_issues: 29,
         total_prs: 41,
@@ -242,13 +242,13 @@ export const mockContributors: Contributor[] = [
   },
   {
     id: 6,
-    username: 'alex-thompson',
-    url: 'https://github.com/alex-thompson',
-    name: 'Alex Thompson',
-    email: 'alex.t@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/6',
-    summary: 'iOS developer specializing in Swift and SwiftUI mobile development',
-    expertise_summary: 'Mobile Development | iOS | Swift | SwiftUI',
+    username: 'sam-nakamura',
+    url: '',
+    name: 'Sam Nakamura',
+    email: 'sam.n@sample-org.dev',
+    avatar_url: '',
+    summary: 'Mobile developer specializing in native iOS development and cross-platform tooling',
+    expertise_summary: 'Mobile Development | iOS | Swift | Cross-Platform',
     created_at: '2024-02-14T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -256,7 +256,7 @@ export const mockContributors: Contributor[] = [
         id: 6,
         contributor: 6,
         repository: 6,
-        repository_name: 'apple/swift',
+        repository_name: 'sample-org/ios-client',
         total_commits: 124,
         total_issues: 18,
         total_prs: 35,
@@ -269,13 +269,13 @@ export const mockContributors: Contributor[] = [
   },
   {
     id: 7,
-    username: 'yuki-tanaka',
-    url: 'https://github.com/yuki-tanaka',
-    name: 'Yuki Tanaka',
-    email: 'yuki.tanaka@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/7',
-    summary: 'Security engineer with deep expertise in cryptography and penetration testing',
-    expertise_summary: 'Security Engineering | Cryptography | Penetration Testing',
+    username: 'riley-park',
+    url: '',
+    name: 'Riley Park',
+    email: 'riley.p@sample-org.dev',
+    avatar_url: '',
+    summary: 'Security engineer with deep expertise in cryptography, threat modeling, and secure architecture',
+    expertise_summary: 'Security Engineering | Cryptography | Threat Modeling',
     created_at: '2024-03-22T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -283,11 +283,11 @@ export const mockContributors: Contributor[] = [
         id: 7,
         contributor: 7,
         repository: 7,
-        repository_name: 'openssl/openssl',
+        repository_name: 'sample-org/auth-service',
         total_commits: 167,
         total_issues: 31,
         total_prs: 48,
-        languages: ['C', 'Assembly'],
+        languages: ['Rust', 'Go'],
         created_at: '2024-03-22T00:00:00Z',
         updated_at: '2025-01-14T00:00:00Z'
       }
@@ -296,13 +296,13 @@ export const mockContributors: Contributor[] = [
   },
   {
     id: 8,
-    username: 'isabella-santos',
-    url: 'https://github.com/isabella-santos',
-    name: 'Isabella Santos',
-    email: 'isabella.s@example.com',
-    avatar_url: 'https://avatars.githubusercontent.com/u/8',
-    summary: 'Full-stack product engineer with focus on user experience and agile methodologies',
-    expertise_summary: 'Product Engineering | Full Stack | User Experience | Agile',
+    username: 'avery-brooks',
+    url: '',
+    name: 'Avery Brooks',
+    email: 'avery.b@sample-org.dev',
+    avatar_url: '',
+    summary: 'Full-stack product engineer focused on user experience, rapid prototyping, and agile delivery',
+    expertise_summary: 'Product Engineering | Full Stack | UX | Agile',
     created_at: '2024-01-30T00:00:00Z',
     updated_at: '2025-01-14T00:00:00Z',
     works: [
@@ -310,7 +310,7 @@ export const mockContributors: Contributor[] = [
         id: 8,
         contributor: 8,
         repository: 8,
-        repository_name: 'vercel/next.js',
+        repository_name: 'sample-org/web-platform',
         total_commits: 195,
         total_issues: 42,
         total_prs: 58,
@@ -332,18 +332,29 @@ export function getMockContributorsByIds(ids: number[]): Contributor[] {
   return mockContributors.filter(c => ids.includes(c.id))
 }
 
-// Mock collaboration data (who works with who)
+// Mock collaboration data — each edge is unique (no duplicates)
 export const mockCollaborations = [
-  { from: 1, to: 2, weight: 12 }, // Sarah ↔ Marcus
-  { from: 1, to: 5, weight: 8 },  // Sarah ↔ Priya
-  { from: 2, to: 4, weight: 15 }, // Marcus ↔ David
-  { from: 3, to: 8, weight: 20 }, // Elena ↔ Isabella
-  { from: 4, to: 2, weight: 15 }, // David ↔ Marcus
-  { from: 5, to: 1, weight: 8 },  // Priya ↔ Sarah
-  { from: 6, to: 3, weight: 6 },  // Alex ↔ Elena
-  { from: 7, to: 4, weight: 10 }, // Yuki ↔ David
-  { from: 8, to: 3, weight: 20 }, // Isabella ↔ Elena
+  { from: 1, to: 2, weight: 12 }, // Alex ↔ Jordan (ML + backend)
+  { from: 1, to: 5, weight: 8 },  // Alex ↔ Taylor (ML + data)
+  { from: 2, to: 4, weight: 15 }, // Jordan ↔ Casey (backend + devops)
+  { from: 3, to: 8, weight: 20 }, // Morgan ↔ Avery (frontend + product)
+  { from: 3, to: 6, weight: 6 },  // Morgan ↔ Sam (frontend + mobile)
+  { from: 4, to: 7, weight: 10 }, // Casey ↔ Riley (devops + security)
+  { from: 5, to: 7, weight: 7 },  // Taylor ↔ Riley (data + security)
+  { from: 6, to: 8, weight: 9 },  // Sam ↔ Avery (mobile + product)
+  { from: 1, to: 7, weight: 5 },  // Alex ↔ Riley (ML + security)
+  { from: 2, to: 3, weight: 11 }, // Jordan ↔ Morgan (backend + frontend)
 ]
+
+// Get unique collaborator count for a contributor (edges, not counting self)
+export function getCollaboratorCount(contributorId: number): number {
+  const collaboratorIds = new Set<number>()
+  mockCollaborations.forEach(c => {
+    if (c.from === contributorId) collaboratorIds.add(c.to)
+    if (c.to === contributorId) collaboratorIds.add(c.from)
+  })
+  return collaboratorIds.size
+}
 
 // Get top collaborators for a contributor
 export function getTopCollaborators(contributorId: number, limit: number = 5): Contributor[] {
@@ -368,49 +379,49 @@ export interface WeeklyProductivity {
 }
 
 export const mockWeeklyProductivity: Record<number, WeeklyProductivity[]> = {
-  1: [ // Sarah Chen - Consistent high performer
+  1: [
     { week: 'Week 1', focusHours: 30, meetingHours: 10, flowIndex: 88 },
     { week: 'Week 2', focusHours: 28, meetingHours: 12, flowIndex: 85 },
     { week: 'Week 3', focusHours: 29, meetingHours: 11, flowIndex: 87 },
     { week: 'Week 4', focusHours: 27, meetingHours: 13, flowIndex: 83 },
   ],
-  2: [ // Marcus Johnson - High meetings
+  2: [
     { week: 'Week 1', focusHours: 24, meetingHours: 16, flowIndex: 75 },
     { week: 'Week 2', focusHours: 22, meetingHours: 18, flowIndex: 72 },
     { week: 'Week 3', focusHours: 21, meetingHours: 19, flowIndex: 70 },
     { week: 'Week 4', focusHours: 20, meetingHours: 20, flowIndex: 68 },
   ],
-  3: [ // Elena Rodriguez - Flow state champion
+  3: [
     { week: 'Week 1', focusHours: 33, meetingHours: 7, flowIndex: 94 },
     { week: 'Week 2', focusHours: 32, meetingHours: 8, flowIndex: 92 },
     { week: 'Week 3', focusHours: 34, meetingHours: 6, flowIndex: 95 },
     { week: 'Week 4', focusHours: 31, meetingHours: 9, flowIndex: 90 },
   ],
-  4: [ // David Kim - Declining trend (burnout)
+  4: [
     { week: 'Week 1', focusHours: 22, meetingHours: 18, flowIndex: 72 },
     { week: 'Week 2', focusHours: 19, meetingHours: 21, flowIndex: 68 },
     { week: 'Week 3', focusHours: 17, meetingHours: 23, flowIndex: 62 },
     { week: 'Week 4', focusHours: 15, meetingHours: 25, flowIndex: 58 },
   ],
-  5: [ // Priya Patel - Balanced
+  5: [
     { week: 'Week 1', focusHours: 27, meetingHours: 13, flowIndex: 80 },
     { week: 'Week 2', focusHours: 26, meetingHours: 14, flowIndex: 78 },
     { week: 'Week 3', focusHours: 25, meetingHours: 15, flowIndex: 76 },
     { week: 'Week 4', focusHours: 26, meetingHours: 14, flowIndex: 79 },
   ],
-  6: [ // Alex Thompson
+  6: [
     { week: 'Week 1', focusHours: 25, meetingHours: 15, flowIndex: 82 },
     { week: 'Week 2', focusHours: 24, meetingHours: 16, flowIndex: 80 },
     { week: 'Week 3', focusHours: 25, meetingHours: 15, flowIndex: 81 },
     { week: 'Week 4', focusHours: 23, meetingHours: 17, flowIndex: 78 },
   ],
-  7: [ // Yuki Tanaka - Improving trend
+  7: [
     { week: 'Week 1', focusHours: 26, meetingHours: 14, flowIndex: 82 },
     { week: 'Week 2', focusHours: 28, meetingHours: 12, flowIndex: 85 },
     { week: 'Week 3', focusHours: 30, meetingHours: 10, flowIndex: 88 },
     { week: 'Week 4', focusHours: 31, meetingHours: 9, flowIndex: 91 },
   ],
-  8: [ // Isabella Santos
+  8: [
     { week: 'Week 1', focusHours: 21, meetingHours: 19, flowIndex: 70 },
     { week: 'Week 2', focusHours: 20, meetingHours: 20, flowIndex: 68 },
     { week: 'Week 3', focusHours: 19, meetingHours: 21, flowIndex: 66 },
@@ -470,7 +481,6 @@ export const mockDailyActivity: Record<number, DayActivity[]> = {
   }),
   4: last28Days.map((date, i) => {
     const isWeekend = new Date(date).getDay() % 6 === 0
-    // Declining trend for burnout case
     const decline = i / 28
     return {
       date,
@@ -499,7 +509,6 @@ export const mockDailyActivity: Record<number, DayActivity[]> = {
   }),
   7: last28Days.map((date, i) => {
     const isWeekend = new Date(date).getDay() % 6 === 0
-    // Improving trend
     const improvement = i / 28
     return {
       date,

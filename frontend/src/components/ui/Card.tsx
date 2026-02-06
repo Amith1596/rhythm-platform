@@ -9,16 +9,16 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'glass', children, ...props }, ref) => {
     const variantStyles = {
-      default: "bg-white border border-gray-200",
-      glass: "bg-white/80 backdrop-blur-md border border-white/50 shadow-lg",
-      elevated: "bg-white shadow-xl border border-gray-100"
+      default: "bg-[#171717] border border-white/10",
+      glass: "bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl border border-white/10",
+      elevated: "bg-[#1a1a1a] border border-white/10 shadow-xl shadow-black/20"
     }
 
     return (
       <div
         ref={ref}
         className={cn(
-          "rounded-3xl p-6 transition-all duration-200",
+          "rounded-2xl p-6 transition-all duration-200",
           variantStyles[variant],
           className
         )}

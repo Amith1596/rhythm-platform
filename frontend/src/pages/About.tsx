@@ -192,7 +192,7 @@ export default function About() {
           <div>
             <h3 className="text-xl font-bold text-[#FFB800] mb-2">Demo Data Notice</h3>
             <p className="text-gray-300 leading-relaxed">
-              This demo showcases Rhythm's capabilities using the <span className="font-mono text-white">fastapi/fastapi</span> repository as an example (7 core contributors). Productivity metrics and calendar data are simulated for demonstration purposes. Rhythm works with any GitHub organization.
+              This prototype showcases Rhythm's capabilities using a fictional engineering team of 8 contributors with synthetic productivity metrics and calendar data. In production, Rhythm connects to your GitHub organization for real data.
             </p>
           </div>
         </div>

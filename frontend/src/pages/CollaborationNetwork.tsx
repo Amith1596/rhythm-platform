@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { mockContributors, mockCollaborations } from '@/lib/mockData'
+import { mockContributors, mockCollaborations, getCollaboratorCount } from '@/lib/mockData'
 import DemoDataBanner from '@/components/DemoDataBanner'
 import { Link } from 'react-router-dom'
 
@@ -62,11 +62,9 @@ export default function CollaborationNetwork() {
     return from === selectedNode.id || to === selectedNode.id
   }
 
-  // Stats
+  // Stats — use unique collaborator count (not edge count)
   const mostConnected = nodes.reduce((max, node) => {
-    const count = mockCollaborations.filter(
-      c => c.from === node.id || c.to === node.id
-    ).length
+    const count = getCollaboratorCount(node.id)
     return count > max.count ? { node, count } : max
   }, { node: nodes[0], count: 0 })
 
@@ -263,9 +261,7 @@ export default function CollaborationNetwork() {
                 <div>
                   <div className="text-xs text-gray-500 font-mono uppercase tracking-wider mb-1">Collaborators</div>
                   <div className="text-sm font-bold font-mono text-white">
-                    {mockCollaborations.filter(c =>
-                      c.from === selectedNode.id || c.to === selectedNode.id
-                    ).length}
+                    {getCollaboratorCount(selectedNode.id)}
                   </div>
                 </div>
               </div>
