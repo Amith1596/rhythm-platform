@@ -1,5 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts'
-import { WeeklyProductivity } from '@/lib/mockData'
+import type { WeeklyProductivity } from '@/lib/mockData'
 
 interface FlowIndexChartProps {
   data: WeeklyProductivity[]

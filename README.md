@@ -346,4 +346,4 @@ Perfect for portfolio showcasing PM skills, technical depth, and product design.
 
 ---
 
-**Built with ❤️ by Amith** | [GitHub](https://github.com/amithp) | [LinkedIn](https://linkedin.com/in/amithp)
+**Co-created with Claude Code** | Built by [Amith](https://github.com/amithp) | [LinkedIn](https://linkedin.com/in/amithp)

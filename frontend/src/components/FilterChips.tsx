@@ -15,9 +15,9 @@ interface FilterChipsProps {
 
 const filterOptions = [
   { value: 'all' as const, label: 'All', icon: '👥', color: 'gray' },
-  { value: 'high-flow' as const, label: 'High Flow', icon: '⚡', color: 'green' },
-  { value: 'at-risk' as const, label: 'At Risk', icon: '⚠️', color: 'red' },
-  { value: 'balanced' as const, label: 'Balanced', icon: '⚖️', color: 'blue' },
+  { value: 'high-flow' as const, label: 'High Flow', icon: '⚡', color: 'lime' },
+  { value: 'at-risk' as const, label: 'At Risk', icon: '⚠️', color: 'coral' },
+  { value: 'balanced' as const, label: 'Balanced', icon: '⚖️', color: 'amber' },
 ]
 
 export default function FilterChips({ selected, onChange, counts }: FilterChipsProps) {
@@ -42,32 +42,30 @@ export default function FilterChips({ selected, onChange, counts }: FilterChipsP
             key={option.value}
             onClick={() => onChange(option.value)}
             className={cn(
-              "inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium text-sm",
+              "inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm",
               "transition-all duration-200",
-              "focus:outline-none focus:ring-2 focus:ring-offset-2",
+              "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent",
               isSelected ? [
-                option.color === 'gray' && "bg-gray-900 text-white shadow-lg focus:ring-gray-500",
-                option.color === 'green' && "bg-green-600 text-white shadow-lg focus:ring-green-500",
-                option.color === 'red' && "bg-red-600 text-white shadow-lg focus:ring-red-500",
-                option.color === 'blue' && "bg-blue-600 text-white shadow-lg focus:ring-blue-500",
+                option.color === 'gray' && "bg-white/20 text-white border border-white/30 shadow-lg focus:ring-white/50",
+                option.color === 'lime' && "bg-[#AAFF00]/20 text-[#AAFF00] border border-[#AAFF00]/40 shadow-lg shadow-[#AAFF00]/20 focus:ring-[#AAFF00]/50",
+                option.color === 'coral' && "bg-[#FF6B35]/20 text-[#FF6B35] border border-[#FF6B35]/40 shadow-lg shadow-[#FF6B35]/20 focus:ring-[#FF6B35]/50",
+                option.color === 'amber' && "bg-[#FFB800]/20 text-[#FFB800] border border-[#FFB800]/40 shadow-lg shadow-[#FFB800]/20 focus:ring-[#FFB800]/50",
               ] : [
-                "bg-white/80 backdrop-blur-sm border border-gray-300 text-gray-700",
-                "hover:bg-white hover:border-gray-400 hover:shadow-md",
-                option.color === 'gray' && "focus:ring-gray-400",
-                option.color === 'green' && "focus:ring-green-400",
-                option.color === 'red' && "focus:ring-red-400",
-                option.color === 'blue' && "focus:ring-blue-400",
+                "bg-white/5 backdrop-blur-sm border border-white/10 text-[#A8A89A]",
+                "hover:bg-white/10 hover:border-white/20 hover:text-white",
+                "focus:ring-white/20",
               ]
             )}
+            style={{ fontFamily: "'Source Code Pro', monospace" }}
           >
             <span>{option.icon}</span>
             <span>{option.label}</span>
             {count !== null && (
               <span className={cn(
-                "px-2 py-0.5 rounded-full text-xs font-semibold",
+                "px-2 py-0.5 rounded-full text-xs font-bold",
                 isSelected
-                  ? "bg-white/20"
-                  : "bg-gray-100 text-gray-600"
+                  ? "bg-white/20 text-white"
+                  : "bg-white/10 text-[#6B6B60]"
               )}>
                 {count}
               </span>

@@ -10,8 +10,29 @@ export interface Contributor {
   id: number;
   username: string;
   url: string;
-  avatar_url: string;
+  avatar_url: string | null;
   summary?: string;
+  // Frontend-only fields for UI (not in backend model)
+  name?: string;
+  email?: string;
+  expertise_summary?: string;
+  works?: ContributorWork[];
+  productivity_metrics?: ProductivityMetrics;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface ContributorWork {
+  id: number;
+  contributor: number;
+  repository: number;
+  repository_name?: string;
+  total_commits?: number;
+  total_issues?: number;
+  total_prs?: number;
+  languages?: string[];
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface ProductivityMetrics {
@@ -23,6 +44,9 @@ export interface ProductivityMetrics {
   productivity_peak?: string;
   work_style?: string;
   well_being_score?: number;
+  burnout_risk?: 'low' | 'medium' | 'high';
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface CollaborationEdge {

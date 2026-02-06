@@ -450,10 +450,10 @@ def process_repositories(repo_urls: List[str], token: Optional[str] = None) -> D
 
 # --- Main Execution (Keep the existing main block) ---
 if __name__ == "__main__":
+    # Add your GitHub repository URLs here to ingest contributor data
+    # Example: "https://github.com/fastapi/fastapi"
     repository_urls = [
-        "https://github.com/meta-llama/llama-models",
-        "https://github.com/meta-llama/codellama",
-        "https://github.com/hseera/python-utilities"
+        # "https://github.com/your-org/your-repo",
     ]
 
     if not GITHUB_TOKEN:

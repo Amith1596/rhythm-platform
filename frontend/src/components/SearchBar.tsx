@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react'
+import type { InputHTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
 
 interface SearchBarProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -26,11 +26,12 @@ export default function SearchBar({ onSearch, className, ...props }: SearchBarPr
       <input
         type="text"
         className={cn(
-          "w-full pl-11 pr-4 py-3 rounded-2xl border border-gray-300",
-          "bg-white/80 backdrop-blur-sm",
-          "focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent",
-          "placeholder:text-gray-400",
+          "w-full pl-11 pr-4 py-3 rounded-lg border border-white/20",
+          "bg-white/5 backdrop-blur-sm text-white font-mono",
+          "focus:outline-none focus:ring-2 focus:ring-[#AAFF00]/50 focus:border-[#AAFF00]/50",
+          "placeholder:text-gray-500",
           "transition-all duration-200",
+          "hover:bg-white/10",
           className
         )}
         placeholder="Search by name or expertise..."

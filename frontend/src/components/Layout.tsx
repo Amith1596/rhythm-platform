@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import Navigation from './Navigation'
 
 interface LayoutProps {
@@ -7,9 +7,9 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F0F4F8] via-[#E8F0F7] to-[#F5EEF8]">
+    <div className="min-h-screen">
       <Navigation />
-      <main className="container mx-auto px-4 py-8">
+      <main className="pt-24 pb-16 px-6">
         {children}
       </main>
     </div>

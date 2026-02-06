@@ -8,3 +8,6 @@ Thumbs.db
 *.swp
 *.swo
 backend/.env
+
+# Design artifacts
+frontend/theme-mock.html

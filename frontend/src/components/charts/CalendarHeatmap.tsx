@@ -1,4 +1,4 @@
-import { DayActivity } from '@/lib/mockData'
+import type { DayActivity } from '@/lib/mockData'
 import { cn } from '@/lib/utils'
 
 interface CalendarHeatmapProps {
@@ -6,21 +6,6 @@ interface CalendarHeatmapProps {
 }
 
 export default function CalendarHeatmap({ data }: CalendarHeatmapProps) {
-  // Calculate max hours for scaling
-  const maxHours = Math.max(...data.map(d => d.focusHours + d.meetingHours))
-
-  // Get intensity class based on total hours
-  const getIntensityClass = (focusHours: number, meetingHours: number) => {
-    const total = focusHours + meetingHours
-    const percentage = (total / maxHours) * 100
-
-    if (percentage === 0) return 'bg-gray-100'
-    if (percentage < 25) return 'bg-primary-200'
-    if (percentage < 50) return 'bg-primary-400'
-    if (percentage < 75) return 'bg-primary-600'
-    return 'bg-primary-800'
-  }
-
   // Get color based on focus vs meeting ratio
   const getRatioColor = (focusHours: number, meetingHours: number) => {
     if (focusHours === 0 && meetingHours === 0) return 'bg-gray-100'

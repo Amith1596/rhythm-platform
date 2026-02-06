@@ -42,9 +42,10 @@ export default function DeveloperProfile() {
     )
   }
 
-  const initials = contributor.name
+  const displayName = contributor.name || contributor.username
+  const initials = displayName
     .split(' ')
-    .map(n => n[0])
+    .map((n: string) => n[0])
     .join('')
     .toUpperCase()
 
@@ -89,7 +90,7 @@ export default function DeveloperProfile() {
                   {metrics.flow_index >= 85 && (
                     <Badge variant="success">High Flow Index</Badge>
                   )}
-                  {metrics.burnout_risk > 40 && (
+                  {metrics.burnout_risk === 'high' && (
                     <Badge variant="warning">Burnout Risk</Badge>
                   )}
                   {metrics.work_style && (
@@ -115,11 +116,11 @@ export default function DeveloperProfile() {
             <Card>
               <div className="text-center">
                 <div className="text-4xl font-bold text-primary-600 mb-2">
-                  {metrics.focus_hours_per_week.toFixed(1)}h
+                  {metrics.focus_hours.toFixed(1)}h
                 </div>
                 <div className="text-gray-600 font-medium mb-1">Focus Hours / Week</div>
                 <div className="text-sm text-gray-500">
-                  {metrics.meeting_load_percentage}% in meetings
+                  {metrics.meeting_load.toFixed(0)}% in meetings
                 </div>
               </div>
             </Card>
@@ -139,13 +140,13 @@ export default function DeveloperProfile() {
             <Card>
               <div className="text-center">
                 <div className={`text-4xl font-bold mb-2 ${
-                  metrics.burnout_risk > 40 ? 'text-red-600' : 'text-green-600'
+                  metrics.burnout_risk === 'high' ? 'text-red-600' : 'text-green-600'
                 }`}>
-                  {metrics.burnout_risk}%
+                  {metrics.burnout_risk?.toUpperCase() || 'LOW'}
                 </div>
                 <div className="text-gray-600 font-medium mb-1">Burnout Risk</div>
                 <div className="text-sm text-gray-500">
-                  {metrics.burnout_risk > 40 ? 'High risk - intervention needed' : 'Healthy work-life balance'}
+                  {metrics.burnout_risk === 'high' ? 'High risk - intervention needed' : 'Healthy work-life balance'}
                 </div>
               </div>
             </Card>
@@ -204,18 +205,18 @@ export default function DeveloperProfile() {
                 <div className="flex-1">
                   <div className="font-medium text-green-900">High Performance</div>
                   <div className="text-sm text-green-700">
-                    {contributor.name} maintains excellent flow state with {metrics.focus_hours_per_week.toFixed(0)}h of weekly focus time.
+                    {displayName} maintains excellent flow state with {metrics.focus_hours.toFixed(0)}h of weekly focus time.
                   </div>
                 </div>
               </div>
             )}
-            {metrics && metrics.burnout_risk > 40 && (
+            {metrics && metrics.burnout_risk === 'high' && (
               <div className="flex items-start gap-3 p-3 bg-red-50 rounded-xl">
                 <div className="text-red-600 text-xl">!</div>
                 <div className="flex-1">
                   <div className="font-medium text-red-900">Burnout Risk Detected</div>
                   <div className="text-sm text-red-700">
-                    Meeting load at {metrics.meeting_load_percentage}% is impacting productivity. Consider reducing meetings or delegating.
+                    Meeting load at {metrics.meeting_load.toFixed(0)}% is impacting productivity. Consider reducing meetings or delegating.
                   </div>
                 </div>
               </div>
@@ -257,7 +258,7 @@ export default function DeveloperProfile() {
         <h2 className="text-2xl font-bold text-primary-900 mb-6">Code Expertise</h2>
         {contributor.works && contributor.works.length > 0 ? (
           <div className="space-y-4">
-            {contributor.works.map((work) => (
+            {contributor.works.map((work: any) => (
               <div
                 key={work.id}
                 className="border border-gray-200 rounded-2xl p-4 hover:border-primary-300 transition-colors"
@@ -266,7 +267,7 @@ export default function DeveloperProfile() {
                   {work.repository_name}
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {work.languages?.map((lang) => (
+                  {work.languages?.map((lang: string) => (
                     <Badge key={lang} variant="default">{lang}</Badge>
                   ))}
                 </div>
@@ -297,10 +298,11 @@ export default function DeveloperProfile() {
         <Card>
           <h2 className="text-2xl font-bold text-primary-900 mb-6">Top Collaborators</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {topCollaborators.map((collab) => {
-              const collabInitials = collab.name
+            {topCollaborators.map((collab: any) => {
+              const collabDisplayName = collab.name || collab.username
+              const collabInitials = collabDisplayName
                 .split(' ')
-                .map(n => n[0])
+                .map((n: string) => n[0])
                 .join('')
                 .toUpperCase()
 
