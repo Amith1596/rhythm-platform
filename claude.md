@@ -3,7 +3,7 @@
 ## Project Overview
 
 **Type**: Full-stack AI-powered people intelligence platform
-**Status**: Backend complete (~40%), Frontend foundation ready (~60% of work remaining)
+**Status**: MVP complete — backend + frontend deployed
 **Purpose**: Portfolio project for PM/product leadership roles
 **Tech**: Django + React + Claude API + GitHub API
 
@@ -44,9 +44,9 @@ This project **consolidates two previous explorations**:
 
 ### Backend (`backend/`)
 **Framework**: Django 4.2 + DRF
-**Database**: SQLite (`db.sqlite3`) with real data from hackathon
+**Database**: SQLite (`db.sqlite3`) with FastAPI demo data
 **AI**: Anthropic Claude Sonnet 4 (streaming API)
-**Data**: 51 contributors, 2,493 collaborations, 4,317 calendar events
+**Data**: 7 contributors from fastapi/fastapi (loaded via `load_demo_data`)
 
 **Models**:
 - `Repository` - GitHub repos
@@ -61,7 +61,7 @@ This project **consolidates two previous explorations**:
 - `api/models.py` - All data models (✅ complete)
 - `api/serializers.py` - DRF serializers (✅ complete)
 - `api/admin.py` - Django admin (✅ complete)
-- `api/views.py` - API endpoints (⚠️ needs new endpoints for productivity/collaboration)
+- `api/views.py` - API endpoints (✅ complete)
 - `api/management/commands/generate_mock_data.py` - Mock data generator (✅ complete)
 - `fetch.py` - GitHub data ingestion script (✅ works)
 
@@ -74,23 +74,24 @@ This project **consolidates two previous explorations**:
 **Framework**: React 19 + Vite 6 + TypeScript
 **UI Library**: Radix UI (30+ components)
 **Styling**: TailwindCSS 4 with custom theme
-**Visualization**: Recharts + react-force-graph
-**Routing**: React Router (not yet configured)
+**Visualization**: Recharts + custom SVG network graph
+**Routing**: React Router (✅ configured)
 **State**: TanStack Query + Axios
 
-**Design System** (from Dashboard Design):
-- Primary: `#1D1F73` (indigo)
-- Secondary: `#3BA3A3` (teal)
-- Accent: `#F4B4B4` (pink)
-- Background: Gradient `#F0F4F8` → `#E8F0F7` → `#F5EEF8`
+**Design System** (lime/charcoal theme):
+- Primary accent: `#AAFF00` (lime)
+- Secondary: `#FFB800` (amber)
+- Danger: `#FF6B35` (coral)
+- Background: `#0D0D0D` (charcoal)
+- Typography: Instrument Sans (headings), DM Sans (body), Source Code Pro (mono)
 
 **Structure**:
 ```
 frontend/src/
-├── components/     # Reusable UI components (TODO: build from Dashboard Design)
-├── pages/          # Route pages (TODO: Organization Dashboard, Developer Profile, etc.)
-├── lib/            # ✅ utils.ts, api.ts configured
-├── hooks/          # Custom React hooks (TODO)
+├── components/     # ✅ UI components (Avatar, Badge, Card, Button, charts, etc.)
+├── pages/          # ✅ Home, ContributorsList, DeveloperProfile, Chat, CollaborationNetwork, About
+├── lib/            # ✅ utils.ts, api.ts, mockData.ts
+├── hooks/          # ✅ useContributor hook
 └── types/          # ✅ TypeScript types defined
 ```
 
@@ -119,12 +120,13 @@ frontend/src/
 - ✅ Existing repo/contributor endpoints
 - ✅ GitHub ingestion script
 
-### Frontend (Foundation Only - ~10% of UI work)
-- ✅ Vite project configured
-- ✅ TailwindCSS with custom theme
-- ✅ All packages installed (Radix UI, Recharts, etc.)
-- ✅ API client and types set up
-- ✅ Folder structure created
+### Frontend (MVP Complete)
+- ✅ 6 pages: Home, Contributors, Developer Profile, AI Chat, Collaboration Network, About
+- ✅ Lime/charcoal dark theme with glassmorphism
+- ✅ SVG collaboration network graph
+- ✅ Productivity charts (Recharts)
+- ✅ Mock data with fictional contributors (no real people)
+- ✅ Deployed to Vercel: https://rhythm-platform.vercel.app
 
 ---
 
@@ -299,11 +301,10 @@ npm run build          # Production build
 **Example Component Pattern:**
 ```tsx
 import { cn } from '@/lib/utils'
-import * as Dialog from '@radix-ui/react-dialog'
 
 export function MyComponent({ className }: { className?: string }) {
   return (
-    <div className={cn("rounded-3xl bg-white/80 backdrop-blur", className)}>
+    <div className={cn("bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl p-6", className)}>
       {/* content */}
     </div>
   )
@@ -337,9 +338,9 @@ export function MyComponent({ className }: { className?: string }) {
 - Django 5.2 doesn't exist - **fixed, using 4.2**
 
 ### Frontend
-- ⚠️ No routes configured yet - **need to set up React Router**
-- ⚠️ No components built yet - **need to port from Dashboard Design**
-- ⚠️ No integration with backend yet - **API client ready, just need to wire up pages**
+- ⚠️ Frontend uses mock data (`mockData.ts`) — not wired to backend API yet
+- ⚠️ AI Chat page is UI-only — needs backend connection for streaming
+- ⚠️ react-force-graph was removed (crashed app) — replaced with custom SVG graph
 
 ---
 
@@ -358,23 +359,13 @@ When finished, this project demonstrates:
 
 ## Next Session Priorities
 
-1. **Build collaboration graph API endpoint** - Quick backend win
-2. **Set up React Router** - Foundation for all pages
-3. **Create basic component library** - Button, Card, etc. from Dashboard Design
-4. **Build Organization Dashboard** - First complete page, showcases everything
-
-Then iterate page by page until complete.
+1. **Wire frontend to backend API** — Replace mockData.ts with real API calls
+2. **Connect AI Chat** — Hook up streaming to `/api/claude-chat/`
+3. **Polish and responsive design** — Mobile-friendly layouts, loading states
 
 ---
 
-## Questions to Ask User
-
-- Do you want to focus on getting one page fully working (e.g., Organization Dashboard) or build all pages partially?
-- Should we prioritize the AI features (chat, project matching) or the productivity analytics (charts, metrics)?
-- Any specific design preferences from the Dashboard Design we should emphasize?
-
----
-
-**Last Updated**: 2025-11-14
-**Project Stage**: Backend complete, Frontend 60% remaining
-**Est. Time to V1 MVP**: 12-15 hours of focused work
+**Last Updated**: 2026-02-06
+**Project Stage**: MVP deployed (frontend mock data, backend API ready)
+**Deployed**: https://rhythm-platform.vercel.app
+**Repo**: https://github.com/Amith1596/rhythm-platform

@@ -11,3 +11,5 @@ backend/.env
 
 # Design artifacts
 frontend/theme-mock.html
+.vercel
+.env*.local
